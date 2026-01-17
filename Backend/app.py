@@ -296,7 +296,9 @@ def home():
 
 
 if __name__ == '__main__':
+    import os
+    port = int(os.environ.get('PORT', 5000))
     print("🚀 Starting Insight Engine Backend...")
-    print("📊 Server running on http://localhost:5000")
+    print(f"📊 Server running on port {port}")
     print("🔗 Ready to accept requests from frontend")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=port)
